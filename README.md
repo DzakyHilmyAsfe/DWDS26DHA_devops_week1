@@ -2,14 +2,14 @@
 
 ## Flow DevOps
   DevOps merupakan gabungan dari *Development* dan *Operational*. Sebagai seorang *DevOps Engineer* kita berada diantara tim *developer* dan tim *operational*, sehingga kita harus memiliki skill komunikasi yang baik, agar dapat mencapai tujuan dari *project* perusahaan tempat kita bekerja. Alur kerja DevOps itu terdiri dari :
-  * *Plan
-  * *Code
-  * *Build
-  * *Test
-  * *Release
-  * *Deploy
-  * *Operate
-  * *Monitor
+  * *Plan*
+  * *Code*
+  * *Build*
+  * *Test*
+  * *Release*
+  * *Deploy*
+  * *Operate*
+  * *Monitor*
   
 <p align="center">
   
