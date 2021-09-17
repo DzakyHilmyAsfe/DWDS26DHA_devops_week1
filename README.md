@@ -11,12 +11,13 @@ DevOps merupakan gabungan dari *Development* dan *Operational*. Sebagai seorang 
   * *Operate*
   * *Monitor*
   
-<p align="center">
-  
-![flow](https://user-images.githubusercontent.com/90166624/133670456-b60ebe84-b02b-445a-9af0-61a59a4d2ad8.jpg)
+ <p align="center">
+  <img src="https://user-images.githubusercontent.com/90166624/133842970-d587632e-97b8-4573-aeba-c523437b4c1d.jpg?raw=true" alt="Sublime's custom image"/>
 </p>
 
+
 Berikut penjelasan dari alur DevOps :
+
 1. **Plan** merupakan perencanaan bagaimana proses pengembangan produk yang akan dilakukan.
 
 2. **Code** merupakan proses penulisan kode yang dibutuhkan produk.
