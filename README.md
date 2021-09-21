@@ -78,7 +78,43 @@ Tols yang akan kita gunakan yaitu Jenkins, Jenkins adalah server otomatisasi sum
 
 * **Configuration Management** 
 
-Configuration Management berguna untuk melakukan manajemen konfigurasi pada server. Tipe jaringan yang akan kita gunakan adalah jaringan client-server, sehingga kecepatan saat melakukan CI/CD menjadi lebih cepat dan efesien. Sedangkan Jenis IP yang akan kita gunakan adalah IP statis yang cocok digunakan untuk bisnis.
+Configuration Management berguna untuk melakukan manajemen konfigurasi pada server. Tipe jaringan yang akan kita gunakan adalah jaringan client-server, sehingga kecepatan saat melakukan CI/CD menjadi lebih cepat dan efesien. Sedangkan Jenis IP yang akan kita gunakan adalah IP statis yang cocok digunakan untuk bisnis. Untuk membuat IP statis, kita bisa edit file interfaces yang lokasinya ada di “/etc/network/interfaces“. Caranya, jalankan perintah nano untuk membuka file tersebut, lalu tambahkan onfigurasi yang kita inginkan. 
+
+root@ubuntu:~# nano /etc/network/interfaces
+
+Setelah file interfaces terbuka, berikan konfigurasi yang kita inginkan. Misalnya seperti dibawah ini.
+
+#The loopback network interface <br>
+auto lo <br>
+iface lo inet loopback <br>
+auto eth1 <br>
+iface eth1 inet static <br>
+
+        address 192.168.10.20
+        netmask 255.255.255.0
+        network 192.168.10.0
+        broadcast 192.168.10.255
+        gateway 192.168.10.10
+        dns-nameservers 8.8.8.8
+        
+Setelah selesai memberikan konfigurasi, simpan perubahan dengan menekan tombol **Ctrl+O** (save). Lalu keluar dengan menekan tombol **Ctrl+X** (Exit).
+
+Kemudian restart service nya agar konfigurasi tadi bisa beroperasi. Perintahnya lihat di bawah ini.
+
+root@ubuntu:~# /etc/init.d/networking restart
+
+ Running /etc/init.d/networking restart is deprecated because it may not enable again some interfaces
+ 
+ Reconfiguring network interfaces...  
+ 
+Ignoring unknown interface eth1=eth1.
+                                                         [ OK ]
+root@ubuntu:~#
+
+Status OK menandakan settingan telah siap. Setelah itu kita coba cek dengan menjalankan perintah ifconfig eth1.
+
+![CaraSettingIPAddressStaticdiUbuntuServer](https://user-images.githubusercontent.com/90166624/134222004-1908cb69-b883-43af-a6a2-c41c90c43d08.png)
+
 
 Tools nya seperti ansible, ansible menyediakan open source software , manajemen konfigurasi, dan alat penerapan aplikasi yang memungkinkan infrastruktur sebagai kode. Dengan menggunakan ansible kita dapat men konfigurasi banyak server secara langsung, tanpa perlu men konfigurasi server satu persatu.
 
